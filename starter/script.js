@@ -95,7 +95,7 @@ var lowercaseBoolean;
 var uppercaseBoolean;
 var numericCharactersBoolean;
 var specialCharactersBoolean;
-var randomPasswordArray;
+var randomPasswordArray = [];
 var randomArraySelection;
 
 // Function to prompt user for password options - objects
@@ -121,6 +121,7 @@ function getPasswordOptions() {
   );
 
   // if statement to choose at least one character type - loops while all conditions are false
+
   while (
     (lowercaseBoolean,
       uppercaseBoolean,
@@ -151,9 +152,20 @@ function getRandom(arr) {
   // Use the random number to find the index in that array
   randomArraySelection = arr[arrayNumber];
   return randomArraySelection;
+
 }
 
+// for (i = 0; i < 10; i++) 
+// if (lowercaseBoolean){
+//   getRandom(lowerCasedCharacters);
+//   randomPasswordArray.push(randomArraySelection);
+//   };
 
+//   console.log(randomPasswordArray);
+
+
+
+ 
 
 // MAIN FUNCTION: GENERATES PASSWORD (on click)
 function generatePassword() {
@@ -163,20 +175,29 @@ function generatePassword() {
 
   for (i = 0; i < passwordLength; i++) {
     if (lowercaseBoolean) {
-      console.log(getRandom(lowerCasedCharacters));
+      var lowercaseSelection = getRandom(lowerCasedCharacters);
+      
 
       if (uppercaseBoolean) {
-        console.log(getRandom(upperCasedCharacters));
+        var uppercaseSelection = getRandom(upperCasedCharacters);
+        
       }
       if (numericCharactersBoolean) {
-        console.log(getRandom(numericCharacters));
+        var numericSelection = getRandom(upperCasedCharacters);
+
       }
       if (specialCharactersBoolean) {
-        console.log(getRandom(specialCharacters));
+        var specialSelection =  getRandom(upperCasedCharacters);
+        randomPasswordArray.push(lowercaseSelection, uppercaseSelection, numericSelection,specialSelection);
       }
     }
+
   }
 }
+
+// Logging password in the input box
+
+
 
 
 // DO NOT TOUCH - ALREADY WORKING CODE
