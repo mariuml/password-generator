@@ -100,7 +100,7 @@ var randomArraySelection;
 
 // Function to prompt user for password options - objects
 function getPasswordOptions() {
-  passwordLength = prompt("How many characters do you need in the password?");
+  passwordLength = prompt("How many characters do you need in the password?"); 
 
   if (passwordLength <= 10 || passwordLength >= 64) {
     alert("Password must be between 10-64 characters");
@@ -119,7 +119,7 @@ function getPasswordOptions() {
   specialCharactersBoolean = confirm(
     "Does your password have to contain special chatacters?"
   );
-
+  }
   // if statement to choose at least one character type - loops while all conditions are false
 
   while (
@@ -141,8 +141,8 @@ function getPasswordOptions() {
     specialCharactersBoolean = confirm(
       "Does your password have to contain special chatacters?"
     );
-  }
-}
+  };
+
 
 // Function for getting a random element from an array
 
@@ -155,17 +155,6 @@ function getRandom(arr) {
 
 }
 
-// for (i = 0; i < 10; i++) 
-// if (lowercaseBoolean){
-//   getRandom(lowerCasedCharacters);
-//   randomPasswordArray.push(randomArraySelection);
-//   };
-
-//   console.log(randomPasswordArray);
-
-
-
- 
 
 // MAIN FUNCTION: GENERATES PASSWORD (on click)
 function generatePassword() {
@@ -174,6 +163,9 @@ function generatePassword() {
   // for loop for the length of the password - go through all criteria and add to an array (.map?)
 
   for (i = 0; i < passwordLength; i++) {
+    if (randomPasswordArray.length >= passwordLength){
+  break;}
+    
     if (lowercaseBoolean) {
       var lowercaseSelection = getRandom(lowerCasedCharacters);
       
@@ -195,10 +187,6 @@ function generatePassword() {
   }
 }
 
-// Logging password in the input box
-
-
-
 
 // DO NOT TOUCH - ALREADY WORKING CODE
 
@@ -211,6 +199,21 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
+}
+
+// Add event listener to generate button
+generateBtn.addEventListener("click", writePassword);
+// DO NOT TOUCH - ALREADY WORKING CODE
+
+// Get references to the #generate element
+var generateBtn = document.querySelector("#generate");
+
+// Write password to the #password input
+function writePassword() {
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
+
+  passwordText.value = randomPasswordArray.join('');
 }
 
 // Add event listener to generate button
