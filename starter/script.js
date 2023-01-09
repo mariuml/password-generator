@@ -96,6 +96,7 @@ var uppercaseBoolean;
 var numericCharactersBoolean;
 var specialCharactersBoolean;
 var randomPasswordArray;
+var randomArraySelection;
 
 // Function to prompt user for password options - objects
 function getPasswordOptions() {
@@ -120,11 +121,10 @@ function getPasswordOptions() {
   );
 
   // if statement to choose at least one character type - loops while all conditions are false
-  // BUG: if you say yes to lowercase boolean, no to others it won't let you do anything
   while (
-    (lowercaseBoolean &&
-      uppercaseBoolean &&
-      numericCharactersBoolean &&
+    (lowercaseBoolean,
+      uppercaseBoolean,
+      numericCharactersBoolean,
       specialCharactersBoolean) === false
   ) {
     alert("Please select at least one character type");
@@ -149,32 +149,34 @@ function getRandom(arr) {
   // Get a random number between 0-total length of the given array
   var arrayNumber = Math.floor(Math.random() * (arr.length - 0) + 0);
   // Use the random number to find the index in that array
-  var randomArraySelection = arr[arrayNumber];
+  randomArraySelection = arr[arrayNumber];
+  return randomArraySelection;
 }
 
-// Function to generate password with user input - calls other functions here
-function generatePassword() {
-  // Call function to get password options - should try and put this on click
-  getPasswordOptions();
 
+
+// MAIN FUNCTION: GENERATES PASSWORD (on click)
+function generatePassword() {
+  getPasswordOptions();
   // Use password options to create a new array that fulfils the criteria
   // for loop for the length of the password - go through all criteria and add to an array (.map?)
 
-for (i = 0; i < passwordLength; i++) {
-    if (lowercaseBoolean)  
-      console.log("The lowercase boolean works");
+  for (i = 0; i < passwordLength; i++) {
+    if (lowercaseBoolean) {
+      console.log(getRandom(lowerCasedCharacters));
+
+      if (uppercaseBoolean) {
+        console.log(getRandom(upperCasedCharacters));
+      }
+      if (numericCharactersBoolean) {
+        console.log(getRandom(numericCharacters));
+      }
+      if (specialCharactersBoolean) {
+        console.log(getRandom(specialCharacters));
+      }
     }
-  if (uppercaseBoolean) {
-      console.log("The uppercase boolean works");
   }
-if (numericCharactersBoolean) {
-        console.log("The numeric characters boolean works");
-      }
-if (specialCharactersBoolean) {
-          console.log("The special characters boolean works");
-        }
-      }
-    }
+}
 
 
 // DO NOT TOUCH - ALREADY WORKING CODE
