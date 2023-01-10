@@ -2,7 +2,7 @@
 
 A random password generator.
 
-![Screenshot showing random password generator site] (images/website-screenshot.jpg)
+![Screenshot showing random password generator site] (images/website-screenshot.png)
 
 ## Description
 
