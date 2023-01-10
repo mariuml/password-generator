@@ -10,7 +10,7 @@ For this project I used Javascript functions to create a random password generat
 
 ## Usage
 
-The landing page has been deployed at: 
+The landing page has been deployed at: https://mariuml.github.io/password-generator/
 
 Please follow the link to view the final version. You can select the generator button and follow the prompts on screen to 
 
