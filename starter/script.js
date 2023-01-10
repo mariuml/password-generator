@@ -117,31 +117,25 @@ function getPasswordOptions() {
     "Does your password have to contain numeric characters?"
   );
   specialCharactersBoolean = confirm(
-    "Does your password have to contain special chatacters?"
+    "Does your password have to contain special characters?"
   );
-  }
+  
   // if statement to choose at least one character type - loops while all conditions are false
-
-  while (
-    (lowercaseBoolean,
-      uppercaseBoolean,
-      numericCharactersBoolean,
-      specialCharactersBoolean) === false
-  ) {
+// BUG: While loop logic does not work
+  
+if 
+(
+  (lowercaseBoolean === false &&
+    uppercaseBoolean === false &&
+    numericCharactersBoolean === false &&
+    specialCharactersBoolean === false) 
+) 
+  {
     alert("Please select at least one character type");
-    lowercaseBoolean = confirm(
-      "Does your password have to contain lowercase letters?"
-    );
-    uppercaseBoolean = confirm(
-      "Does your password have to contain uppercase letters?"
-    );
-    numericCharactersBoolean = confirm(
-      "Does your password have to contain numeric characters?"
-    );
-    specialCharactersBoolean = confirm(
-      "Does your password have to contain special chatacters?"
-    );
-  };
+    return null;
+  
+  }
+}
 
 
 // Function for getting a random element from an array
@@ -167,26 +161,23 @@ function generatePassword() {
   break;}
     
     if (lowercaseBoolean) {
-      var lowercaseSelection = getRandom(lowerCasedCharacters);
+      randomPasswordArray.push(getRandom(lowerCasedCharacters));
       
-
       if (uppercaseBoolean) {
-        var uppercaseSelection = getRandom(upperCasedCharacters);
+        randomPasswordArray.push(getRandom(upperCasedCharacters));
         
       }
       if (numericCharactersBoolean) {
-        var numericSelection = getRandom(upperCasedCharacters);
+        randomPasswordArray.push(getRandom(numericCharacters));
 
       }
       if (specialCharactersBoolean) {
-        var specialSelection =  getRandom(upperCasedCharacters);
-        randomPasswordArray.push(lowercaseSelection, uppercaseSelection, numericSelection,specialSelection);
+        randomPasswordArray.push(getRandom(specialCharacters));
       }
     }
 
   }
-}
-
+};
 
 // DO NOT TOUCH - ALREADY WORKING CODE
 
