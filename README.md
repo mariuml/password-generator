@@ -2,7 +2,7 @@
 
 A random password generator.
 
-![Screenshot showing random password generator site] (images/website-screenshot.png)
+![Screenshot showing random password generator site] (https://github.com/mariuml/password-generator/blob/main/images/website-screenshot.png)
 
 ## Description
 
