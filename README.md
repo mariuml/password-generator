@@ -5,7 +5,7 @@ A random password generator.
 ![Screenshot showing random password generator site](assets/images/website-screenshot.png)
 ## Description
 
-For this project I used Javascript functions to create a random password generator.
+For this project I used Javascript functions to create a random password generator. I used my knowledge of global and local scope, if statements and variables to create this fully interactive program. 
 
 ## Usage
 
