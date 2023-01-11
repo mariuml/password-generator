@@ -2,7 +2,7 @@
 
 A random password generator.
 
-![Screenshot showing random password generator site] (assets/images/website-screenshot.png)
+![Screenshot showing random password generator site](assets/images/website-screenshot.png)
 ## Description
 
 For this project I used Javascript functions to create a random password generator.
