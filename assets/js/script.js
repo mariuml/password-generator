@@ -160,24 +160,24 @@ function generatePassword() {
     if (randomPasswordArray.length >= passwordLength){
   break;}
     
-    if (lowercaseBoolean) {
+   if (lowercaseBoolean) {
       randomPasswordArray.push(getRandom(lowerCasedCharacters));
-      
-      if (uppercaseBoolean) {
+    }
+    if (uppercaseBoolean) {
         randomPasswordArray.push(getRandom(upperCasedCharacters));
         
       }
-      if (numericCharactersBoolean) {
+    if (numericCharactersBoolean) {
         randomPasswordArray.push(getRandom(numericCharacters));
 
       }
-      if (specialCharactersBoolean) {
+   if (specialCharactersBoolean) {
         randomPasswordArray.push(getRandom(specialCharacters));
       }
     }
 
   }
-};
+
 
 // DO NOT TOUCH - ALREADY WORKING CODE
 
