@@ -102,7 +102,7 @@ var randomArraySelection;
 function getPasswordOptions() {
   passwordLength = prompt("How many characters do you need in the password?"); 
 
-  if (passwordLength <= 10 || passwordLength >= 64) {
+  while (passwordLength < 10 || passwordLength > 64) {
     alert("Password must be between 10-64 characters");
     passwordLength = prompt("How many characters do you need in the password?");
   }
@@ -121,7 +121,7 @@ function getPasswordOptions() {
   );
   
   // if statement to choose at least one character type - loops while all conditions are false
-// BUG: While loop logic does not work
+
   
 if 
 (
@@ -179,21 +179,6 @@ function generatePassword() {
   }
 };
 
-// DO NOT TOUCH - ALREADY WORKING CODE
-
-// Get references to the #generate element
-var generateBtn = document.querySelector("#generate");
-
-// Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-
-  passwordText.value = password;
-}
-
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
 // DO NOT TOUCH - ALREADY WORKING CODE
 
 // Get references to the #generate element
